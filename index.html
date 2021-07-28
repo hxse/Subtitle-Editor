@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Subtitle Editor</title>
+</head>
+
+<body>
+    <script type="module" src="srt-parse-2.js"></script>
+
+    <div id="#help">
+        <br>
+        <div>使用教程:
+            <div>1. 按 enter 键切割文字, 在句中自动剪切并合并到下一行, 在句末则新建空白行</div>
+            <div>2. 按 ctrl+enter 键新建行,然后切割文字到该行</div>
+            <div>3. 在句首, 按 backspace 键自动合并到上一行</div>
+            <div>4. 在句尾, 按 delete 键删除该行</div>
+            <br>
+        </div>
+    </div>
+    </div>
+    <div id="act">
+        <button id="cutBtn" hidden>切分:隐藏的理由是切分需要处理时间戳, 这个很麻烦, 而且还没做好</button>
+        <button id="merBtn">合并</button>
+        <button id="delBtn">删除</button>
+    </div>
+    <button id="addAgainBtn">再添一个</button>
+    <div id="file">
+        <input type="file" accept=".srt">
+    </div>
+    <div id='filter'>
+        <div><input type="text" value=","><button>确认</button></div>
+    </div>
+    <div id="time">
+        <div><input type="number" value="100" tite='40是消灭逗号与合并的临界点, 建议100, 40-400, 400-500其实都是差不多的'><button>确认</button>
+        </div>
+    </div>
+    <div id='download'>
+        <button>下载</button>
+    </div>
+    <div id="main">
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
